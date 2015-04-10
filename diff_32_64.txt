@@ -1,0 +1,20 @@
+I- Differences between the x86_ 32bit and 64bit architecture:
+!!!! This section is not written yet. 
+
+
+II- The registers:
+
+The list of registers used by the system calls:
+
+--------------------32bit syscall registres--------------------
+Syscall number	Param 1	Param 2	Param 3	Param 4	Param 5	Param 6
+eax		ebx	ecx	edx	esi	edi	ebp
+
+--------------------64bit syscall registres--------------------
+Syscall number	Param 1	Param 2	Param 3	Param 4	Param 5	Param 6
+rax		rdi	rsi	rdx	r10	r8	r9
+
+The returned value are stored in eax(32bit) and in rax(64bit).
+
+All these registers are defined in the user_regs_struct structure.But the latter defines two different variables for the syscall number and the returned value which are respectively orig_rax and rax.
+	
